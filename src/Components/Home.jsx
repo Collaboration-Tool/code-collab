@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/Components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, useInView, AnimatePresence, stagger } from "framer-motion";
 import { Code, Users, Sparkles, GitBranch } from "lucide-react";
@@ -8,17 +8,17 @@ import { useEffect, useRef } from "react";
 
 export default function HomePage() {
     const features = [
-        { icon: <Users />, title: "Real-time Collaboration", description: "ork together seamlessly with live code editing and live cursor support.", titleColor: "text-green-400" },
-        { icon: <Sparkles />, title: "AI-driven Tools", description: "Get intelligent code suggestions instantly with comprehensive documentation.", titleColor: "text-yellow-400" },
+        { icon: <Users />, title: "Real-time Collaboration", description: "ork together seamlessly with live code editing and live cursor support.", titleColor: "text-yellow-400" },
+        { icon: <Sparkles />, title: "AI-driven Tools", description: "Get intelligent code suggestions instantly with comprehensive documentation.", titleColor: "text-purple-400" },
         { icon: <Code />, title: "Smart Linting", description: "Identify and fix syntax errors effortlessly as you type with smart AI suggestions.", titleColor: "text-red-400" },
-        { icon: <GitBranch />, title: "Real-time Chatbot Support", description: "Integrated AI chat bot for instant help and guidance.", titleColor: "text-purple-400" },
+        { icon: <GitBranch />, title: "Real-time Chatbot Support", description: "Integrated AI chat bot for instant help and guidance.", titleColor: "text-blue-400" },
     ];
 
     const testimonialRef = useRef(null);
     const isInView = useInView(testimonialRef, { once: true, margin: "-100px" });
 
     return (
-        <div className="min-h-screen background-animated">
+        <div className="min-h-screen bg-gradient-to-br from-green-900 via-gray-900 to-black text-white">
             {/* Hero Section */}
             <section className="text-center py-20 px-6">
                 <motion.div
@@ -27,7 +27,7 @@ export default function HomePage() {
                     transition={{ duration: 0.8 }}
                 >
                     <motion.h1
-                        className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+                        className="text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-200 to-purple-400 bg-clip-text text-transparent"
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2 }}
@@ -47,14 +47,14 @@ export default function HomePage() {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.6 }}
                     >
-                        <Button
+                        <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="button-animated"
+                            className="bg-gradient-to-r from-yellow-600 to-purple-600 hover:from-yellow-700 hover:to-purple-700 text-white rounded-full px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all"
                             onClick={() => window.location.href = "/register"}
                         >
                             Get Started - It's Free
-                        </Button>
+                        </motion.button>
                     </motion.div>
                 </motion.div>
             </section>
@@ -93,13 +93,13 @@ export default function HomePage() {
             {/* Code Editor Preview */}
             <section className="flex justify-center items-center py-16 px-6">
                 <motion.div
-                    className="w-full max-w-4xl bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-700 relative overflow-hidden"
+                    className="w-full max-w-4xl bg-gray-900 rounded-xl shadow-2xl p-8 border border-gray-700 relative overflow-hidden"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true, margin: "-100px" }}
                 >
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500" />
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 to-purple-500" />
                     <div className="flex gap-2 mb-6">
                         <div className="h-3 w-3 rounded-full bg-red-500" />
                         <div className="h-3 w-3 rounded-full bg-yellow-500" />
@@ -133,7 +133,7 @@ export default function HomePage() {
             {/* Testimonials */}
             <section className="px-10 py-12 text-center" ref={testimonialRef}>
                 <motion.h2
-                    className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+                    className="text-3xl font-bold mb-6 bg-gradient-to-r from-yellow-200 to-purple-400 bg-clip-text text-transparent"
                     initial={{ opacity: 0, y: 20 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5 }}
@@ -156,12 +156,12 @@ export default function HomePage() {
 
             {/* Footer */}
             <motion.footer
-                className="text-center py-6 text-gray-500"
+                className="text-center py-6 text-gray-300"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
             >
-                &copy; 2025 CodeEditor. All rights reserved.
+                &copy; 2025 CodeMate. All rights reserved.
             </motion.footer>
         </div>
     );
@@ -170,16 +170,16 @@ export default function HomePage() {
 function FeatureCard({ icon, title, description, titleColor }) {
     return (
         <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3 }}>
-            <Card className="bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700 hover:border-pink-400 transition-colors group">
-                <CardContent className="text-center flex flex-col items-center">
+            <Card className="bg-gray-900 p-6 rounded-2xl shadow-lg border border-gray-700 hover:border-green-400 transition-colors group min-w-[250px] h-[250px]">
+                <CardContent className="text-center flex flex-col justify-between items-center h-full">
                     <motion.div
-                        className={`text-4xl mb-4 bg-gradient-to-r ${titleColor} transition-colors`}
-                        animate={{ scale: [1, 1.1, 1] }}
+                        className={`text-4xl ${titleColor} transition-colors`}
+                        animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
                     >
                         {icon}
                     </motion.div>
-                    <h3 className={`text-xl font-semibold mb-2 ${titleColor}`}>{title}</h3>
+                    <h3 className={`text-xl font-semibold ${titleColor}`}>{title}</h3>
                     <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
                         {description}
                     </p>
@@ -195,10 +195,11 @@ function Testimonial({ name, feedback, animationDelay }) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: animationDelay, duration: 0.5 }}
+            whileHover={{ scale: 1.01 }} // This makes hover animation work
         >
-            <Card className="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-purple-400 transition-colors">
+            <Card className="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-green-400 transition-colors">
                 <CardContent className="relative">
-                    <div className="absolute top-0 left-0 text-6xl text-gray-700 opacity-50">“</div>
+                    <div className="absolute top-0 left-0 text-6xl text-gray-600 opacity-50">“</div>
                     <p className="italic text-gray-300 pt-8 px-4">{feedback}</p>
                     <p className="text-blue-400 mt-4 font-medium">- {name}</p>
                 </CardContent>
