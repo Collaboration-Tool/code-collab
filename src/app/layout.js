@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "⚡ CodeCollaborator",
-  description: "Welcome to Home of  Collaboration .",
+  title: "⚡CodeMate",
+  description: "New generated code editor with AI-powered suggestions.",
 };
 
 export default function RootLayout({ children }) {
@@ -23,11 +23,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AuthProvider>   
+        {/* <AuthProvider>    */}
           <Provider>
           {children}
           </Provider>
-        </AuthProvider>
+        {/* </AuthProvider> */}
       </body>
     </html>
   );
