@@ -39,6 +39,21 @@ theme: {
         DEFAULT: 'hsl(var(--destructive))',
         foreground: 'hsl(var(--destructive-foreground))'
       },
+      animation: {
+        'background-move': 'backgroundAnimation 10s linear infinite',
+        'button-gradient': 'buttonGradient 3s ease infinite',
+      },
+      keyframes: {
+        backgroundAnimation: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '-00% 50%' }, // Keeps moving left infinitely
+        },
+        buttonGradient: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+      },
       border: 'hsl(var(--border))',
       input: 'hsl(var(--input))',
       ring: 'hsl(var(--ring))',
