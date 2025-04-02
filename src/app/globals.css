@@ -62,6 +62,18 @@ body {
   }
 }
 
+@layer utilities {
+  .border-border {
+    broder-color: var(--border);
+  }
+  .bg-background {
+    background-color: var(--background);
+  }
+  .text-foreground {
+    color: var(--foreground);
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -76,6 +88,60 @@ body {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+@keyframes backgroundMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: -400% 50%; } /* Moves left infinitely */
+}
+
+@keyframes buttonGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Apply animations using Tailwind's @apply */
+@keyframes waveMotion {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.background-animated {
+  @apply text-white flex flex-col;
+  background: radial-gradient(circle at 30% 30%,
+  #0d0b1d, /* Deep Indigo */
+  #2a0a4f, /* Dark Purple */
+  #521b8f, /* Royal Violet */
+  #8e24aa  /* Soft Magenta */
+  );
+  background-size: 200% 200%;
+  animation: waveMotion 15s ease-in-out infinite alternate;
+}
+
+
+@keyframes buttonGlow {
+  0% { box-shadow: 0 0 10px rgba(255, 20, 147, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 20, 147, 1); }
+  100% { box-shadow: 0 0 10px rgba(255, 20, 147, 0.5); }
+}
+
+.button-animated {
+  @apply text-white font-semibold py-4 px-8 rounded-full text-lg transition-all;
+  background: linear-gradient(90deg,#0d0b1d, /* Deep Indigo */
+  #2a0a4f, /* Dark Purple */
+  #521b8f, /* Royal Violet */
+  #8e24aa  /* Soft Magenta */);
+  background-size: 200% 200%;
+  animation: buttonGlow 3s infinite alternate ease-in-out;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button-animated:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgb(176, 37, 231);
+}
+
 
 .animate-gradient {
   background-size: 200% 200%;
