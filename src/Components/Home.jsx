@@ -47,14 +47,14 @@ export default function HomePage() {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.6 }}
                     >
-                        <Button
+                        <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="button-animated"
                             onClick={() => window.location.href = "/register"}
                         >
                             Get Started - It's Free
-                        </Button>
+                        </motion.button>
                     </motion.div>
                 </motion.div>
             </section>
@@ -170,16 +170,16 @@ export default function HomePage() {
 function FeatureCard({ icon, title, description, titleColor }) {
     return (
         <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3 }}>
-            <Card className="bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700 hover:border-pink-400 transition-colors group">
-                <CardContent className="text-center flex flex-col items-center">
+            <Card className="bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700 hover:border-pink-400 transition-colors group min-w-[250px] h-[250px]">
+                <CardContent className="text-center flex flex-col justify-between items-center h-full">
                     <motion.div
-                        className={`text-4xl mb-4 bg-gradient-to-r ${titleColor} transition-colors`}
+                        className={`text-4xl ${titleColor} transition-colors`}
                         animate={{ scale: [1, 1.1, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
                     >
                         {icon}
                     </motion.div>
-                    <h3 className={`text-xl font-semibold mb-2 ${titleColor}`}>{title}</h3>
+                    <h3 className={`text-xl font-semibold ${titleColor}`}>{title}</h3>
                     <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
                         {description}
                     </p>
