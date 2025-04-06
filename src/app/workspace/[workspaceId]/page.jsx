@@ -4,12 +4,12 @@ import { useParams } from "next/navigation";
 import { doc, getDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "@/config/firebase";
 import Chat from "@/components/Chat";
-import Editor from "@/components/Editor";
+import Editor from "@/Components/Editor";
 import SearchBar from "@/components/Searchbar";
 import { MessageCircle, Menu, PanelLeftOpen } from "lucide-react"; // Chat & Menu icons
-import Header from "@/components/Header";
-import ShowMembers from "@/components/Members";
-import LiveCursor from "@/components/LiveCursor";
+import Header from "@/Components/Header";
+import ShowMembers from "@/Components/Members";
+import LiveCursor from "@/Components/LiveCursor";
 import NavPanel from "@/components/Navpanel";
 
 const Workspace = () => {
