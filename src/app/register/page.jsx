@@ -91,10 +91,10 @@ export default function SignUpPage() {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-slate-900">
+        <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-gray-950 via-purple-950 to-gray-950">
             <ToastContainer theme="dark" />
 
-            <Card className="w-full max-w-md bg-slate-800 border-slate-700">
+            <Card className="w-full max-w-md bg-gray-900 border-pink-950">
                 <CardHeader>
                     <CardTitle className="text-center text-2xl text-white">Create Account</CardTitle>
                 </CardHeader>
@@ -123,14 +123,14 @@ export default function SignUpPage() {
                     <Button
                         onClick={handleSignUp}
                         disabled={loading}
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                        className="w-full bg-blue-800 hover:bg-blue-700 text-white"
                     >
                         {loading ? "Processing..." : "Sign Up"}
                     </Button>
                     <Button
                         onClick={handleGoogleSignIn}
                         disabled={loading}
-                        className="w-full bg-red-600 hover:bg-red-700 text-white"
+                        className="w-full bg-red-800 hover:bg-red-700 text-white"
                     >
                         {loading ? "Processing..." : "Continue with Google"}
                     </Button>

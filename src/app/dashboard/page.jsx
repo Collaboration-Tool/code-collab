@@ -178,16 +178,18 @@ const Dashboard = () => {
     };
 
     return (
-        <div className="h-screen w-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex flex-col animate-gradient">
+        <div className="h-screen w-screen bg-gradient-to-br from-gray-950 via-purple-950 to-purple-900 text-white">
             <ToastContainer />
             <Header />
 
             <div className="flex justify-between items-center p-6">
-                <h1 className="text-4xl border-b border-blue-500 font-mono text-blue-300">Your Workspaces :</h1>
+                <h1 className="text-4xl font-bold border-b border-blue-500 font-mono text-blue-300">
+                    Your Workspaces:
+                </h1>
 
                 <Button
                     onClick={createWorkspace}
-                    className="relative inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-md group hover:from-purple-700 hover:to-blue-700 transform transition-all duration-300 ease-out hover:scale-105 z-0"
+                    className="button-animatedrelative inline-flex items-center px-6 py-3 bg-gradient-to-r from-gray-950 to-blue-950 text-white font-semibold rounded-lg shadow-md group hover:from-blue-950 hover:to-gray-950 transform transition-all duration-300 ease-out hover:scale-105 z-0"
                     disabled={isCreating}
                 >
                     {isCreating ? (
