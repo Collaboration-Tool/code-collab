@@ -93,7 +93,7 @@ export default function HomePage() {
             {/* Code Editor Preview */}
             <section className="flex justify-center items-center py-16 px-6">
                 <motion.div
-                    className="w-full max-w-4xl bg-gray-800 rounded-xl shadow-2xl p-8 border border-gray-700 relative overflow-hidden"
+                    className="w-full max-w-4xl bg-gray-900 rounded-xl shadow-2xl p-8 border border-purple-800 relative overflow-hidden"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
@@ -142,12 +142,12 @@ export default function HomePage() {
                 </motion.h2>
                 <div className="grid md:grid-cols-2 gap-6">
                     <Testimonial
-                        name="Alex"
+                        name="Sahil"
                         feedback="This AI-powered editor has transformed the way I code!"
                         animationDelay={0}
                     />
                     <Testimonial
-                        name="Taylor"
+                        name="Nishant"
                         feedback="The real-time collaboration is a game-changer!"
                         animationDelay={0.2}
                     />
@@ -166,21 +166,22 @@ export default function HomePage() {
         </div>
     );
 }
-
-function FeatureCard({ icon, title, description, titleColor }) {
+function FeatureCard({ icon, title, description }) {
     return (
         <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3 }}>
-            <Card className="bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700 hover:border-pink-400 transition-colors group min-w-[250px] h-[250px]">
+            <Card className="bg-gray-900  p-6 rounded-2xl shadow-lg hover:shadow-2xl border border-purple-800 hover:border-pink-500 transition-all group min-w-[250px] h-[250px]">
                 <CardContent className="text-center flex flex-col justify-between items-center h-full">
                     <motion.div
-                        className={`text-4xl ${titleColor} transition-colors`}
-                        animate={{ scale: [1, 1.1, 1] }}
+                        className="text-4xl text-purple-300 transition-all"
+                        animate={{ scale: [1, 1.1, 1], color: ["#d4b5ff", "#ff79c6", "#d4b5ff"] }}
                         transition={{ duration: 2, repeat: Infinity }}
                     >
                         {icon}
                     </motion.div>
-                    <h3 className={`text-xl font-semibold ${titleColor}`}>{title}</h3>
-                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
+                    <h3 className="text-xl font-semibold text-purple-200 group-hover:text-pink-400 transition-colors">
+                        {title}
+                    </h3>
+                    <p className="text-gray-300 group-hover:text-gray-100 transition-all">
                         {description}
                     </p>
                 </CardContent>
@@ -196,7 +197,7 @@ function Testimonial({ name, feedback, animationDelay }) {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: animationDelay, duration: 0.5 }}
         >
-            <Card className="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-purple-400 transition-colors">
+            <Card className="bg-gray-900 p-6 rounded-xl shadow-lg border border-purple-800 hover:border-pink-500 transition-colors">
                 <CardContent className="relative">
                     <div className="absolute top-0 left-0 text-6xl text-gray-700 opacity-50">“</div>
                     <p className="italic text-gray-300 pt-8 px-4">{feedback}</p>

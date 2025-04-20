@@ -89,23 +89,23 @@ const Login = () => {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen bg-[#0f172a] text-white">
+        <div className="flex justify-center items-center h-screen bg-gradient-to-r from-gray-950 via-purple-950 to-gray-950 text-white">
             <ToastContainer theme="dark" />
 
-            <Card className="w-96 bg-[#1e293b] border border-gray-500 shadow-2xl rounded-lg">
+            <Card className="w-96 bg-gray-900 border-pink-950 shadow-2xl rounded-lg">
                 <CardHeader>
                     <CardTitle className="text-center text-xl font-bold text-white">Login</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     {error && <p className="text-red-400 text-sm text-center">{error}</p>}
                     <form onSubmit={handleLogin} className="space-y-4">
-                        <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="bg-white text-black border border-gray-300" required />
-                        <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="bg-white text-black border border-gray-300" required />
-                        <Button type="submit" className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold">
+                        <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="bg-slate-700 text-white border border-slate-600" required />
+                        <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="bg-slate-700 text-white border border-slate-600" required />
+                        <Button type="submit" className="w-full bg-green-800 hover:bg-green-700 text-white font-semibold">
                             Login with Email
                         </Button>
                     </form>
-                    <Button onClick={handleGoogleLogin} className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold">
+                    <Button onClick={handleGoogleLogin} className="w-full bg-blue-800 hover:bg-blue-700 text-white font-semibold">
                         Login with Google
                     </Button>
                     <p className="text-center text-sm text-gray-300">
