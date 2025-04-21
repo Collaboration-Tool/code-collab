@@ -184,7 +184,7 @@ const Dashboard = () => {
 
             <div className="flex justify-between items-center p-6">
                 <h1 className="text-4xl font-bold border-b border-blue-500 font-mono text-blue-300">
-                    Your Workspaces:
+                    Your Workspaces
                 </h1>
 
                 <Button

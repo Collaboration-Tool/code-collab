@@ -118,8 +118,8 @@ const Profile = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
-            <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-lg p-6">
+        <div className="h-screen w-screen bg-gradient-to-br from-gray-950 via-purple-950 to-purple-900 text-white p-4 flex items-center justify-center">
+            <div className="w-full max-w-md bg-gray-900 rounded-lg shadow-lg p-6">
                 {/* Profile Header */}
                 <div className="flex flex-col items-center mb-6">
                     <Avatar className="w-16 h-16 mb-4 border-2 border-blue-500">
@@ -133,7 +133,7 @@ const Profile = () => {
                 {/* Logout Button */}
                 <Button
                     onClick={logout}
-                    className="w-full bg-red-600 hover:bg-red-700 text-sm font-medium py-2 rounded-md mb-6 text-class"
+                    className="w-full bg-red-800 hover:bg-red-700 text-sm font-medium py-2 rounded-md mb-6 text-class"
                 >
                     Logout
                 </Button>
