@@ -17,7 +17,7 @@ export async function POST(request) {
         const result = await model.generateContent(prompt);
         let documentation = result.response.text().trim();
         documentation = documentation.replace(/[\s\S]*?/g, ""); // Remove triple backticks if any
-        documentation = documentation.replace(code, "").trim(); // Remove the code if it appears
+        documentation = documentation.replace("").trim(); // Remove the code if it appears
         console.log(documentation);
 
         return NextResponse.json({ documentation }, { status: 200 });
