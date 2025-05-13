@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "⚡CodeMate",
+  title: "⚡CodeCollab",
   description: "New generated code editor with AI-powered suggestions.",
 };
 
