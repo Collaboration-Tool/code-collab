@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-
 export async function POST(req) {
     try {
         const { email, code } = await req.json(); // Get email and code from request
@@ -13,7 +12,6 @@ export async function POST(req) {
                 pass: process.env.SENDGRID_API_KEY, // set this API key as an environment variable
             },
         });
-
         const receiver = {
             from: process.env.EMAIL_USER,
             to: email,
@@ -45,7 +43,6 @@ export async function POST(req) {
         </html>
         `,
         };
-
         const result = await transport.sendMail(receiver);
         if(result.rejected.length > 0){
             return NextResponse.json({ success: false, message: "Verification email not sent!" });
