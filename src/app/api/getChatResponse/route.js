@@ -13,7 +13,8 @@ export async function POST(request) {
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 
-        const prompt = `you an ai chat bot , who helps people in giving code and solve their probems . your response will directly be shown in the text , so give the response like a chat  and your request is this  ${message}`;
+        const prompt = `you an ai chat bot , who helps people in giving code and solve their probems . your 
+        response will directly be shown in the text , so give the response like a chat  and your request is this  ${message}`;
 
         const result = await model.generateContent(prompt);
         let aiResponse = result.response.text().trim();

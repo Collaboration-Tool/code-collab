@@ -22,12 +22,9 @@ export const loginWithGoogle = async () => {
         const provider = new GoogleAuthProvider();
         const result = await signInWithPopup(auth, provider);
         const user = result.user;
-
         console.log("Logged in with Google:", user.displayName);
-
         const userRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(userRef);
-
         if (!docSnap.exists()) {
             // Create a new user model in Firestore
             await setDoc(userRef, {
@@ -51,7 +48,6 @@ export const loginWithGoogle = async () => {
         } else {
             console.log("User already exists, logging in:", user.displayName);
         }
-
         return { success: true, user };
     } catch (error) {
         console.error("Error logging in with Google:", error.message);
